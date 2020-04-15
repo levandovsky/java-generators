@@ -13,21 +13,23 @@ public class Main {
 	// write your code here
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter first number:");
-        float a = scanner.nextFloat();
+        int a = scanner.nextInt();
         System.out.println("Enter second number:");
-        float b = scanner.nextFloat();
-        float multA = getMult("a", a);
-        float multB = getMult("b", b);
-        float generatorA = getGenerator(multA);
-        float generatorB = getGenerator(multB);
-        System.out.println("First generator:" + Integer.toBinaryString(Math.round(generatorA)) + " second generator:" + Integer.toBinaryString(Math.round(generatorB)));
+        int b = scanner.nextInt();
+        int multA = getMult("a", a);
+        int multB = getMult("b", b);
+        int generatorA = getGenerator(multA);
+        int generatorB = getGenerator(multB);
+        System.out.println(generatorA);
+        System.out.println(generatorB);
+        System.out.println("First generator:" + Integer.toBinaryString(generatorA) + " second generator:" + Integer.toBinaryString(generatorB));
     }
 
-    private static float getGenerator(float number) {
+    private static int getGenerator(int number) {
         return number % divider;
     }
 
-    private static float getMult(String factor, float number) {
+    private static int getMult(String factor, int number) {
         if (factor.equals("a")) {
             return number * factorA;
         }
