@@ -1,8 +1,10 @@
 package com.company;
+
 import java.util.Scanner;
 
 public class Main {
     private static Generator generator = new Generator();
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter two whole numbers to start calculation.");
@@ -16,13 +18,20 @@ public class Main {
                     break;
                 }
                 long a = Long.parseLong(stringA);
+                if (a == 0) {
+                    throw new NumberFormatException();
+                }
                 System.out.println("Enter second number:");
                 String stringB = scanner.next();
                 if (checkExit(stringB)) {
                     printExit();
                     break;
                 }
+
                 long b = Long.parseLong(stringB);
+                if (b == 0) {
+                    throw new NumberFormatException();
+                }
                 System.out.println("Calculating...");
                 int matches = generator.getMatchedCount(a, b);
                 if (matches >= 0) {
@@ -31,7 +40,7 @@ public class Main {
                     break;
                 }
             } catch (NumberFormatException nfe) {
-                System.out.println("Wrong value entered! Please enter whole number!");
+                System.out.println("Wrong value entered! Make sure value is a whole number and greater than zero!");
                 System.out.println("Starting again...");
                 scanner.nextLine();
             }
@@ -46,6 +55,5 @@ public class Main {
     private static void printExit() {
         System.out.println("Exiting...");
     }
-
 
 }
