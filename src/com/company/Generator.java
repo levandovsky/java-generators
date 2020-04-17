@@ -66,24 +66,4 @@ class Generator {
 
         return matchedTimes;
     }
-
-    public void setIterationNumber(int iterationNumber) {
-        this.iterationNumber = iterationNumber;
-    }
-
-    public void setDivider(int divider) {
-        this.divider = divider;
-    }
-
-    public void setFactorA(int factorA) {
-        this.factorA = factorA;
-    }
-
-    public void setFactorB(int factorB) {
-        this.factorB = factorB;
-    }
-
-    public void setNumbersToCheck(int numbersToCheck) {
-        this.numbersToCheck = numbersToCheck;
-    }
 }
